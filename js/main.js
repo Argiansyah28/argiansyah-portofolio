@@ -155,12 +155,10 @@
           }
         });
 
-        /* Re-trigger the entrance animation on the panel that just opened. */
+        
         var opened = document.getElementById(panelId);
-        if (opened) {
-          opened.style.animation = "none";
-          void opened.offsetWidth;
-          opened.style.animation = "";
+        if (opened && window.innerWidth < 700) {
+          opened.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       });
     });
