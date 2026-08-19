@@ -142,83 +142,122 @@
     </div>
   </section>
 
-  <!-- ========================================================== Experience -->
-  <section class="section section--tinted" id="experience">
-    <div class="shell">
-      <h2 class="section__title" data-reveal>
-        <span class="section__eyebrow">Experience</span>
-        <span class="section__heading">My Experience</span>
-        <span class="section__rule" aria-hidden="true"></span>
-      </h2>
+ <!-- ========================================================== Experience -->
+<section class="section section--tinted" id="experience">
+  <div class="shell">
+    <h2 class="section__title" data-reveal>
+      <span class="section__eyebrow">Experience</span>
+      <span class="section__heading">My Experience</span>
+      <span class="section__rule" aria-hidden="true"></span>
+    </h2>
 
-      <div class="xp" data-reveal>
+    <div class="xp" data-reveal>
 
-        <div class="xp__tabs" role="tablist" aria-label="Employers">
-          <button class="xp__tab is-active" role="tab" data-xp="telkom"
-                  aria-selected="true" aria-controls="xp-telkom">
-            <span class="xp__company">Telkom University</span>
-            <span class="xp__period">2022 — 2026</span>
-          </button>
+      <!-- TAB BUTTONS -->
+      <div class="xp__tabs" role="tablist" aria-label="Employers">
+        <button class="xp__tab is-active" role="tab" data-xp="telkom"
+                aria-selected="true" aria-controls="xp-telkom">
+          <span class="xp__company">Telkom University</span>
+          <span class="xp__period">September 2022 — August 2026</span>
+        </button>
 
-          <button class="xp__tab" role="tab" data-xp="freelance"
-                  aria-selected="false" aria-controls="xp-freelance">
-            <span class="xp__company">Independent projects</span>
-            <span class="xp__period">2023 — Present</span>
-          </button>
+        <button class="xp__tab" role="tab" data-xp="himaif"
+                aria-selected="false" aria-controls="xp-himaif">
+          <span class="xp__company">HIMA IF Telkom University</span>
+          <span class="xp__period">May 2024 — Mar 2025</span>
+        </button>
 
-          <button class="xp__tab" role="tab" data-xp="internship"
-                  aria-selected="false" aria-controls="xp-internship">
-            <span class="xp__company">PLN PUSDIKLAT Ragunan Jakarta</span>
-            <span class="xp__period">April 2026 — June 2026</span>
-          </button>
-        </div>
+        <button class="xp__tab" role="tab" data-xp="hastja"
+                aria-selected="false" aria-controls="xp-hastja">
+          <span class="xp__company">HASTJA</span>
+          <span class="xp__period">December 2023 — September 2024</span>
+        </button>
 
-        <div class="xp__stage">
-          <article class="xp__panel is-active" id="xp-telkom" role="tabpanel">
-            <h3 class="xp__role">Undergraduate Researcher</h3>
-            <p class="xp__where">Telkom University Bandung · Faculty of Informatics</p>
-            <ul class="xp__list">
-              <li>Built a Bi-LSTM model that forecasts gas pipeline flow from historical sensor readings.</li>
-              <li>Tuned the network with Optuna instead of hand-picking hyperparameters, and documented why each search space was chosen.</li>
-              <li>Cleaned and reshaped the raw operational data before training — missing intervals, unit mismatches, and outliers.</li>
-              <li>Wrote and defended the thesis, then wrapped the model so it could be called rather than only run in a notebook.</li>
-            </ul>
-          </article>
+        <button class="xp__tab" role="tab" data-xp="freelance"
+                aria-selected="false" aria-controls="xp-freelance">
+          <span class="xp__company">Independent projects</span>
+          <span class="xp__period">2023 — Present</span>
+        </button>
 
-          <article class="xp__panel" id="xp-freelance" role="tabpanel">
-            <h3 class="xp__role">Full-stack Developer</h3>
-            <p class="xp__where">Self-directed · Six public repositories</p>
-            <ul class="xp__list">
-              <li>Shipped six applications end to end — attendance, personal finance, document Q&amp;A, news, and retail analytics.</li>
-              <li>Worked across TypeScript, JavaScript, and Python depending on what the problem actually needed.</li>
-              <li>Designed the database schema and REST interface first, then built the front end against it.</li>
-              <li>Kept every project public on GitHub so the commit history is part of the portfolio.</li>
-            </ul>
+        <button class="xp__tab" role="tab" data-xp="internship"
+                aria-selected="false" aria-controls="xp-internship">
+          <span class="xp__company">PLN PUSDIKLAT Ragunan Jakarta</span>
+          <span class="xp__period">April 2026 — June 2026</span>
+        </button>
+      </div>
 
-            <h3 class="xp__role">Ai engineer</h3>
-            <p class="xp__where">Self-directed · Six public repositories</p>
-            <ul class="xp__list">
-              <li>Designed RAG-based document Q&A pipelines using Python and LLM integrations for accurate context retrieval from user documents.</li>
-              <li>Built data analytics and predictive models (retail restock & pricing optimization) using scikit-learn, pandas, and custom ML logic.</li>
-              <li>Wrapped Machine Learning models into lightweight REST APIs (FastAPI/Flask) for fast inference and easy consumption by web front-ends.</li>
-              <li>Processed and structured unstructured datasets (e.g., news aggregation, text parsing) to supply structured inputs for AI/ML workflows.</li>
-            </ul>
-          </article>
+     
+      <div class="xp__stage">
+        
 
-          <article class="xp__panel" id="xp-internship" role="tabpanel">
-            <h3 class="xp__role">Intern Developer</h3>
-            <p class="xp__where">PLN PUSDIKLAT · Jakarta</p>
-            <ul class="xp__list">
-              <li>Assisted in developing internal web tools to streamline daily operations and reporting.</li>
-              <li>Integrated front-end dashboards with RESTful API endpoints for internal data management.</li>
-              <li>Collaborated on backend service deployment and database optimization tasks.</li>
-            </ul>
-          </article>
-        </div>
+        <article class="xp__panel is-active" id="xp-telkom" role="tabpanel">
+          <h3 class="xp__role">Undergraduate Researcher</h3>
+          <p class="xp__where">Telkom University Bandung · Faculty of Informatics</p>
+          <ul class="xp__list">
+            <li>Built a Bi-LSTM model that forecasts gas pipeline flow from historical sensor readings.</li>
+            <li>Tuned the network with Optuna instead of hand-picking hyperparameters, and documented why each search space was chosen.</li>
+            <li>Cleaned and reshaped the raw operational data before training — missing intervals, unit mismatches, and outliers.</li>
+            <li>Wrote and defended the thesis, then wrapped the model so it could be called rather than only run in a notebook.</li>
+          </ul>
+        </article>
+       
+        <article class="xp__panel" id="xp-himaif" role="tabpanel">
+          <h3 class="xp__role">Head Of Kemahasiswaan Division</h3>
+          <p class="xp__where">HIMA IF · Telkom University</p>
+          <ul class="xp__list">
+            <li>Provided advocacy and support services for Informatics undergraduate students at Telkom University to resolve academic and campus-life challenges.</li>
+            <li>Built platforms and community initiatives to engage Informatics students and foster harmony within HIMA IF.</li>
+            <li>Led division operations and coordinated team members to deliver impactful student welfare programs.</li>
+          </ul>
+        </article>
+
+        <article class="xp__panel" id="xp-hastja" role="tabpanel">
+          <h3 class="xp__role">Head Of Organization</h3>
+          <p class="xp__where">HASTJA · Bandung</p>
+          <ul class="xp__list">
+            <li>Spearheaded overall organizational strategy and vision, leading all internal divisions to ensure smooth program execution.</li>
+            <li>Supervised and coordinated division leads across technology, events, media, and public relations to maintain cross-functional synergy.</li>
+            <li>Represented HASTJA in strategic discussions with external partners to expand organizational reach and partnerships.</li>
+            <li>Evaluated operational workflows across all departments, resolving bottlenecks to maximize team productivity.</li>
+          </ul>
+        </article>
+
+        <article class="xp__panel" id="xp-freelance" role="tabpanel">
+          <h3 class="xp__role">Full-stack Developer</h3>
+          <p class="xp__where">Self-directed · Six public repositories</p>
+          <ul class="xp__list">
+            <li>Shipped six applications end to end — attendance, personal finance, document Q&amp;A, news, and retail analytics.</li>
+            <li>Worked across TypeScript, JavaScript, and Python depending on what the problem actually needed.</li>
+            <li>Designed the database schema and REST interface first, then built the front end against it.</li>
+            <li>Kept every project public on GitHub so the commit history is part of the portfolio.</li>
+          </ul>
+
+          <h3 class="xp__role" style="margin-top: 1.5rem;">AI Engineer</h3>
+          <p class="xp__where">Self-directed · Six public repositories</p>
+          <ul class="xp__list">
+            <li>Designed RAG-based document Q&amp;A pipelines using Python and LLM integrations for accurate context retrieval from user documents.</li>
+            <li>Built data analytics and predictive models (retail restock &amp; pricing optimization) using scikit-learn, pandas, and custom ML logic.</li>
+            <li>Wrapped Machine Learning models into lightweight REST APIs (FastAPI/Flask) for fast inference and easy consumption by web front-ends.</li>
+            <li>Processed and structured unstructured datasets (e.g., news aggregation, text parsing) to supply structured inputs for AI/ML workflows.</li>
+          </ul>
+        </article>
+
+        <!-- 5. PLN PUSDIKLAT -->
+        <article class="xp__panel" id="xp-internship" role="tabpanel">
+          <h3 class="xp__role">Intern Developer</h3>
+          <p class="xp__where">PLN PUSDIKLAT · Jakarta</p>
+          <ul class="xp__list">
+            <li>Assisted in developing internal web tools to streamline daily operations and reporting.</li>
+            <li>Integrated front-end dashboards with RESTful API endpoints for internal data management.</li>
+            <li>Collaborated on backend service deployment and database optimization tasks.</li>
+          </ul>
+        </article>
 
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ============================================================== Skills -->
   <section class="section" id="skills">
