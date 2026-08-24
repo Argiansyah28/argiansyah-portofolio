@@ -129,19 +129,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .section__eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--brass);
-}
-
-.section__heading {
+  display: block;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(2rem, 1.4rem + 2.6vw, 3.1rem);
   line-height: 1.1;
   letter-spacing: -0.015em;
+  text-transform: none;
+  color: var(--brass);
 }
 
 .section__rule {
@@ -786,8 +781,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .burger { display: flex; }
   .header__cv { display: none; }
 
-  
+
   .xp__tab:hover { transform: none; }
+
+  .xp__tabs { gap: 0.75rem; }
+  .xp__tab {
+    background: #241318;
+    border-color: rgba(232, 180, 74, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+  .xp__tab.is-active {
+    background: #2c161b;
+    border-left-color: var(--brass);
+  }
 
   .nav {
     position: fixed;
