@@ -41,6 +41,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -371,6 +372,47 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   position: relative;
   justify-self: center;
   width: min(320px, 70vw);
+  transform-origin: top center;
+  animation: portrait-wind 2.2s var(--ease) 0.2s both;
+}
+
+/* Sways right, then left, then right again with shrinking amplitude — like
+   a kite or balloon caught in the wind on a tether — before settling into
+   place. The pivot sits at the top so it reads as swinging, not sliding.
+   Runs once on load, independent of scroll. */
+@keyframes portrait-wind {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) translate3d(0, -16px, 0) scale(0.92);
+    filter: blur(5px);
+  }
+  10% {
+    opacity: 1;
+  }
+  24% {
+    transform: rotate(10deg) translate3d(36px, -6px, 0) scale(1.03);
+    filter: blur(3px);
+  }
+  42% {
+    transform: rotate(-8deg) translate3d(-28px, 4px, 0) scale(0.98);
+    filter: blur(1.5px);
+  }
+  60% {
+    transform: rotate(5deg) translate3d(16px, -2px, 0) scale(1.015);
+    filter: blur(0.5px);
+  }
+  76% {
+    transform: rotate(-2.5deg) translate3d(-8px, 1px, 0) scale(0.995);
+    filter: blur(0);
+  }
+  90% {
+    transform: rotate(1deg) translate3d(3px, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
 }
 
 .portrait__arch {
@@ -754,6 +796,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   will-change: opacity, transform;
 }
 
+/* Directional entrances — content slides in from the side as it scrolls
+   into view instead of just fading up. */
+[data-reveal="left"]  { transform: translateX(-56px); }
+[data-reveal="right"] { transform: translateX(56px); }
+
 [data-reveal].is-visible,
 [data-enter].is-visible {
   opacity: 1;
@@ -820,6 +867,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .nav__link::after { display: none; }
 
   .hero__facts { gap: 1.25rem; }
+
+  /* Keep the side-entrance subtle on narrow screens so nothing clips. */
+  [data-reveal="left"]  { transform: translateX(-24px); }
+  [data-reveal="right"] { transform: translateX(24px); }
 }
 
 /* ------------------------------------------------------- Reduced motion -- */

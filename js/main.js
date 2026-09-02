@@ -14,11 +14,12 @@
     var items = document.querySelectorAll("[data-reveal]");
     if (!items.length) return;
 
+    /* Toggling (rather than a one-shot reveal) means the transition replays
+       every time a section crosses the viewport edge — scrolling down
+       plays it forward, scrolling back up plays it again on the way out. */
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
       });
     }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
 
