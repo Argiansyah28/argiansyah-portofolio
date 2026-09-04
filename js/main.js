@@ -7,8 +7,6 @@
 (function () {
   "use strict";
 
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   /* ------------------------------------------------ Reveal on scroll ---- */
   function initReveal() {
     var items = document.querySelectorAll("[data-reveal]");
@@ -59,7 +57,6 @@
   function initScrollChrome() {
     var progress = document.getElementById("progress");
     var header = document.getElementById("header");
-    var portrait = document.getElementById("portrait");
     var ticking = false;
 
     function update() {
@@ -68,14 +65,6 @@
 
       progress.style.transform = "scaleX(" + (travel > 0 ? scrolled / travel : 0) + ")";
       header.classList.toggle("is-stuck", scrolled > 24);
-
-      /* A little depth in the hero — desktop only, where there is room for it. */
-      if (portrait && !prefersReducedMotion && window.innerWidth >= 1000) {
-        var shift = Math.min(scrolled, window.innerHeight) * 0.07;
-        portrait.style.transform = "translate3d(0," + shift.toFixed(1) + "px,0)";
-      } else if (portrait) {
-        portrait.style.transform = "";
-      }
 
       ticking = false;
     }
