@@ -14,6 +14,7 @@
 
   --brass:      #e8b44a;
   --brass-soft: #f0cd8a;
+  --brass-deep: #bf8a2c;
 
   --bone:  #f4ede4;
   --muted: #a99691;
@@ -172,6 +173,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: #23140a;
 }
 .button--solid:hover { background: var(--brass-soft); }
+
+/* Same brass, a few shades down — pairs with .button--solid without
+   introducing a second colour. */
+.button--solid-deep {
+  background: var(--brass-deep);
+  color: #23140a;
+}
+.button--solid-deep:hover { background: var(--brass); }
 
 .button--sm { padding: 0.6rem 1.1rem; font-size: 0.8rem; }
 .button--lg { padding: 1rem 2.4rem; font-size: 0.95rem; }
