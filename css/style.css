@@ -643,12 +643,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding: clamp(1.35rem, 3vw, 1.75rem);
 }
 
+/* Two lines' worth of space whether the title wraps or not, so the role
+   and body text start at the same height on every card in a row. */
 .card__title {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.25;
   letter-spacing: -0.01em;
+  min-height: 2.5em;
 }
 
 .card__role {
@@ -671,10 +674,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--muted);
 }
 
+/* Pinned to the bottom of the card, so the tech list and the button line
+   up across the row no matter how long each description runs. */
 .card__tech {
   display: grid;
   gap: 0.35rem;
-  margin-top: 1.1rem;
+  margin-top: auto;
   padding-top: 1.1rem;
   border-top: 1px solid var(--line);
 }
@@ -695,7 +700,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  margin-top: auto;
   padding-top: 1.5rem;
 }
 
