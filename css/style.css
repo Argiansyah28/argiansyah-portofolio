@@ -678,16 +678,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding-top: 1.1rem;
   border-top: 1px solid var(--line);
 }
-.card__tech > div { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+/* Label left, value right — a fixed label column keeps every row aligned
+   instead of long values wrapping under their label. */
+.card__tech > div { display: flex; gap: 0.5rem; align-items: baseline; }
 .card__tech dt {
   font-family: var(--font-mono);
   font-size: 0.64rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--brass);
-  min-width: 5.5rem;
+  flex: 0 0 5.5rem;
 }
-.card__tech dd { font-size: 0.82rem; color: var(--bone); }
+.card__tech dd { flex: 1; min-width: 0; font-size: 0.82rem; color: var(--bone); }
 
 .card__actions {
   display: flex;
