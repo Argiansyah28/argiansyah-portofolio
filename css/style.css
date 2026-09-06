@@ -127,6 +127,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: grid;
   gap: 0.5rem;
   margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
+  text-align: center;
 }
 
 .section__eyebrow {
@@ -139,17 +140,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   text-transform: none;
   color: var(--brass);
 }
-
-.section__rule {
-  width: 100%;
-  height: 1px;
-  margin-top: 0.75rem;
-  background: linear-gradient(90deg, var(--brass), rgba(232, 180, 74, 0));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 1.1s var(--ease) 0.15s;
-}
-.is-visible .section__rule { transform: scaleX(1); }
 
 /* -------------------------------------------------------------- Buttons -- */
 .button {
@@ -384,45 +374,53 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border: 1px solid rgba(232, 180, 74, 0.5);
   background: linear-gradient(168deg, var(--maroon) -10%, var(--maroon-deep) 70%);
   box-shadow: 0 0 0 7px rgba(123, 0, 0, 0.22), 0 20px 45px rgba(0, 0, 0, 0.45);
-  transform-origin: top center;
-  animation: portrait-wind 2.2s var(--ease) 0.2s both;
+  transform-origin: center;
+  animation: portrait-wind 2.6s cubic-bezier(0.16, 0.62, 0.24, 1) 0.15s both;
 }
 
-/* Sways right, then left, then right again with shrinking amplitude — like
-   a kite or balloon caught in the wind on a tether — before settling into
-   place. The pivot sits at the top so it reads as swinging, not sliding.
-   Runs once on load, independent of scroll. */
+/* Starts oversized and faded, as if pressed right up against the screen,
+   then shrinks back to its real size while drifting left and right —
+   a deflating balloon carried on the wind — and lands square at scale 1
+   with no rotation. Offsets are in percentages so the path scales with
+   the circle on small screens. Runs once on load, independent of scroll. */
 @keyframes portrait-wind {
   0% {
     opacity: 0;
-    transform: rotate(0deg) translate3d(0, -16px, 0) scale(0.92);
-    filter: blur(5px);
+    transform: scale(2.3) translate3d(0, 0, 0) rotate(0deg);
+    filter: blur(12px);
   }
-  10% {
+  12% {
     opacity: 1;
+    transform: scale(2) translate3d(4%, -1%, 0) rotate(5deg);
+    filter: blur(8px);
   }
-  24% {
-    transform: rotate(10deg) translate3d(36px, -6px, 0) scale(1.03);
-    filter: blur(3px);
+  28% {
+    transform: scale(1.68) translate3d(-7%, 2%, 0) rotate(-8deg);
+    filter: blur(5.5px);
   }
-  42% {
-    transform: rotate(-8deg) translate3d(-28px, 4px, 0) scale(0.98);
-    filter: blur(1.5px);
+  44% {
+    transform: scale(1.42) translate3d(6%, -2%, 0) rotate(7deg);
+    filter: blur(3.5px);
   }
-  60% {
-    transform: rotate(5deg) translate3d(16px, -2px, 0) scale(1.015);
-    filter: blur(0.5px);
+  59% {
+    transform: scale(1.24) translate3d(-4.5%, 1.5%, 0) rotate(-5deg);
+    filter: blur(2px);
   }
-  76% {
-    transform: rotate(-2.5deg) translate3d(-8px, 1px, 0) scale(0.995);
+  72% {
+    transform: scale(1.13) translate3d(3%, -1%, 0) rotate(3.2deg);
+    filter: blur(1px);
+  }
+  83% {
+    transform: scale(1.06) translate3d(-1.8%, 0.6%, 0) rotate(-1.8deg);
+    filter: blur(0.4px);
+  }
+  92% {
+    transform: scale(1.02) translate3d(0.8%, -0.2%, 0) rotate(0.7deg);
     filter: blur(0);
-  }
-  90% {
-    transform: rotate(1deg) translate3d(3px, 0, 0) scale(1);
   }
   100% {
     opacity: 1;
-    transform: rotate(0deg) translate3d(0, 0, 0) scale(1);
+    transform: scale(1) translate3d(0, 0, 0) rotate(0deg);
     filter: blur(0);
   }
 }
@@ -905,6 +903,5 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
   [data-reveal],
   [data-enter] { opacity: 1; transform: none; }
-  .section__rule { transform: scaleX(1); }
 }
 
